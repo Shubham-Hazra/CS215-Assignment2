@@ -17,13 +17,17 @@ mean_matrix = ones(19200,16);
 cov_matrix = (data - mean_matrix)*((data-mean_matrix)')/15;
 H = (data-mean_matrix)/sqrt(15);
 [V,~] = eigs(H*H',4);
+subplot(3,4, [2 3])
 image(rescale(reshape(mean_vector,80,80,3),0,1))
+title 'Mean Image'
 for i=1:4
-subplot(2,2,i)
+subplot(3,4,[3+2*i 4+2*i])
 image(rescale(reshape(V(:,i),80,80,3),0,1))
 end
 subplot(1,1,1)
 [V,D] = eigs(H*H',10);
 [d,ind] = sort(abs(diag(D)));
 plot(d,'-')
-
+xlabel 'number of eigenvalues'
+ylabel 'Eigenvalues'
+title 'Top 10 Eigenvalues'

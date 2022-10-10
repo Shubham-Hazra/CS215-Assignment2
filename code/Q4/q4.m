@@ -28,5 +28,8 @@ principle_eigenvector = V(:,ind(1,1));
 imagesc(reshape(mean_vector,28,28)-reshape(principle_eigenvector*sqrt(principle_eigenval),28,28));
 imagesc(reshape(mean_vector,28,28));
 imagesc(reshape(mean_vector,28,28)+reshape(principle_eigenvector*sqrt(principle_eigenval),28,28));
+imshow(uint8(reshape(mean_vector,28,28)-reshape(principle_eigenvector*sqrt(principle_eigenval),28,28)));
+imshow(uint8(reshape(mean_vector,28,28)));
+imshow(uint8(reshape(mean_vector,28,28)+reshape(principle_eigenvector*sqrt(principle_eigenval),28,28)));
 
 

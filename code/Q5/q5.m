@@ -30,5 +30,7 @@ Projection = ((data_matrix-mean_matrix).')*V_compressed;
 Reprojection = (Projection * V_compressed.').';
 imagesc(reshape(digits(:,:,1),28,28));
 imagesc(reshape(Reprojection(:,1),28,28));
+imshow((reshape(digits(:,:,1),28,28)));
+imshow((reshape(Reprojection(:,1),28,28)));
 
 
